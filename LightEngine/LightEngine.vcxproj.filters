@@ -7,6 +7,9 @@
     <Filter Include="Sample">
       <UniqueIdentifier>{656b759f-efb2-4f59-b546-0dd585a90074}</UniqueIdentifier>
     </Filter>
+    <Filter Include="PvZ">
+      <UniqueIdentifier>{d484e49d-bc01-4b35-b4ac-59a84284db95}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Entity.cpp">
@@ -31,6 +34,15 @@
     <ClCompile Include="SampleScene.cpp">
       <Filter>Sample</Filter>
     </ClCompile>
+    <ClCompile Include="Plant.cpp">
+      <Filter>PvZ</Filter>
+    </ClCompile>
+    <ClCompile Include="Zombie.cpp">
+      <Filter>PvZ</Filter>
+    </ClCompile>
+    <ClCompile Include="PvZScene.cpp">
+      <Filter>PvZ</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Entity.h">
@@ -53,6 +65,15 @@
     </ClInclude>
     <ClInclude Include="SampleScene.h">
       <Filter>Sample</Filter>
+    </ClInclude>
+    <ClInclude Include="Plant.h">
+      <Filter>PvZ</Filter>
+    </ClInclude>
+    <ClInclude Include="Zombie.h">
+      <Filter>PvZ</Filter>
+    </ClInclude>
+    <ClInclude Include="PvZScene.h">
+      <Filter>PvZ</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

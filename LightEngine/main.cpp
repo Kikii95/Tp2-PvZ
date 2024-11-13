@@ -4,6 +4,7 @@
 
 #include "GameManager.h"
 #include "SampleScene.h"
+#include "PvZScene.h"
 
 #include <cstdlib>
 #include <crtdbg.h>
@@ -12,9 +13,10 @@ int main()
 {
     GameManager* pInstance = GameManager::Get();
 
-	pInstance->CreateWindow(1280, 720, "SampleScene");
-	
-	pInstance->LaunchScene<SampleScene>();
+			
+	pInstance->CreateWindow(1280, 720, "PvZScene");
+
+	pInstance->LaunchScene<PvZScene>();
 
 	return 0;
 }

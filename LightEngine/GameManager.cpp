@@ -54,8 +54,7 @@ void GameManager::Run()
 		CreateWindow(1280, 720, "Default window");
 	}
 
-	//#TODO : Load somewhere else
-	bool fontLoaded = mFont.loadFromFile("Hack-Regular.ttf");
+		bool fontLoaded = mFont.loadFromFile("Hack-Regular.ttf");
 	_ASSERT(fontLoaded);
 
 	_ASSERT(mpScene != nullptr);
@@ -91,8 +90,7 @@ void GameManager::Update()
 {
 	mpScene->Update();
 
-    //Update
-    for (auto it = mEntities.begin(); it != mEntities.end(); )
+        for (auto it = mEntities.begin(); it != mEntities.end(); )
     {
 		Entity* entity = *it;
 
@@ -108,8 +106,7 @@ void GameManager::Update()
         it = mEntities.erase(it);
     }
 
-    //Collision
-    for (auto it1 = mEntities.begin(); it1 != mEntities.end(); ++it1)
+        for (auto it1 = mEntities.begin(); it1 != mEntities.end(); ++it1)
     {
         auto it2 = it1;
         ++it2;
