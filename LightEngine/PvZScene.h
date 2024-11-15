@@ -15,6 +15,9 @@ public:
     void HandleInput(const sf::Event& event) override;
     void Update() override;
 
+
+    const std::vector<Zombie*>& GetZombiesInRow(int row) const;
+
 private:
     std::vector<Zombie*> zombies[NUM_ROWS];
     std::vector<Plant*> plants[NUM_ROWS];  

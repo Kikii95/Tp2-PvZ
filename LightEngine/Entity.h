@@ -51,7 +51,7 @@ public:
 
     Scene* GetScene() const;
 
-    void Update();
+    virtual void Update();
 
 protected:
     virtual ~Entity() {};

@@ -43,6 +43,9 @@
     <ClCompile Include="PvZScene.cpp">
       <Filter>PvZ</Filter>
     </ClCompile>
+    <ClCompile Include="State.cpp" />
+    <ClCompile Include="StateList.cpp" />
+    <ClCompile Include="Projectile.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Entity.h">
@@ -75,6 +78,9 @@
     <ClInclude Include="PvZScene.h">
       <Filter>PvZ</Filter>
     </ClInclude>
+    <ClInclude Include="State.h" />
+    <ClInclude Include="StateList.h" />
+    <ClInclude Include="Projectile.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scene.inl">

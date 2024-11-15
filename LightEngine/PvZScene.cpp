@@ -8,9 +8,14 @@ void PvZScene::Initialize() {
     pZombieSelected = nullptr;
     pPlantSelected = nullptr;
 
-    for (int i = 0; i < NUM_ROWS; ++i) {
-        zombies[i].clear();
-        plants[i].clear();
+    for (int row = 0; row < NUM_ROWS; ++row) {
+        zombies[row].clear();
+        plants[row].clear();
+        auto plant = CreateEntity<Plant>(50.f, sf::Color::Green);
+        plant->SetPosition(150.f, static_cast<float>(ROW_Y_POSITIONS[row]));
+        plant->SetRow(row);       
+        plant->SetScene(this);    
+        plants[row].push_back(plant);
     }
 }
 
@@ -43,32 +48,35 @@ void PvZScene::HandleInput(const sf::Event& event) {
 
 void PvZScene::Update() {
     for (int row = 0; row < NUM_ROWS; ++row) {
-        Debug::DrawLine(0, static_cast<float>(ROW_Y_POSITIONS[row] + 120), 1280, static_cast<float>(ROW_Y_POSITIONS[row] + 120), sf::Color::White);
-
-        for (auto it = zombies[row].begin(); it != zombies[row].end(); ) {
-            if ((*it)->ToDestroy()) {
-                delete* it;
-                it = zombies[row].erase(it);
-            }
-            else {
-                (*it)->Update();
-                ++it;
-            }
+        for (auto& plant : plants[row]) {
+            plant->Update();
         }
 
-        for (auto it = plants[row].begin(); it != plants[row].end(); ) {
-            if ((*it)->ToDestroy()) {
-                delete* it;
-                it = plants[row].erase(it);
+        for (auto zombieIt = zombies[row].begin(); zombieIt != zombies[row].end(); ) {
+            auto zombie = *zombieIt;
+
+            for (auto plant : plants[row]) {
+                if (zombie->IsColliding(plant)) {
+                    plant->Destroy();
+                    zombie->Destroy();
+                }
+            }
+
+            if (zombie->ToDestroy()) {
+                delete zombie;
+                zombieIt = zombies[row].erase(zombieIt);
             }
             else {
-                (*it)->Update();
-                ++it;
+                zombie->Update();
+                ++zombieIt;
             }
         }
     }
 }
 
+const std::vector<Zombie*>& PvZScene::GetZombiesInRow(int row) const {
+    return zombies[row];
+}
 
 int PvZScene::GetRowFromMousePosition(int mouseY) const {
     for (int i = 0; i < NUM_ROWS; ++i) {
