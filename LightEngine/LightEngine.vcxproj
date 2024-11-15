@@ -25,12 +25,9 @@
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Plant.cpp" />
-    <ClCompile Include="Projectile.cpp" />
     <ClCompile Include="PvZScene.cpp" />
     <ClCompile Include="SampleScene.cpp" />
     <ClCompile Include="Scene.cpp" />
-    <ClCompile Include="State.cpp" />
-    <ClCompile Include="StateList.cpp" />
     <ClCompile Include="Utils.cpp" />
     <ClCompile Include="Zombie.cpp" />
   </ItemGroup>
@@ -40,12 +37,9 @@
     <ClInclude Include="Entity.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="Plant.h" />
-    <ClInclude Include="Projectile.h" />
     <ClInclude Include="PvZScene.h" />
     <ClInclude Include="SampleScene.h" />
     <ClInclude Include="Scene.h" />
-    <ClInclude Include="State.h" />
-    <ClInclude Include="StateList.h" />
     <ClInclude Include="Utils.h" />
     <ClInclude Include="Zombie.h" />
   </ItemGroup>
